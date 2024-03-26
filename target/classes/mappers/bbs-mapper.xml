@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 기본 mapper -->
+<mapper namespace="bbs">
+	<select id="bbslist" resultType="bvo">
+		select * from bbs_t order by b_idx 
+	</select>
+	<insert id="bbsinsert" parameterType="bvo">
+		insert into bbs_t(subject, writer, content, f_name, pwd, write_date, hit)
+		values(#{subject}, #{writer}, #{content}, #{f_name}, #{pwd}, sysdate(), 0)
+	</insert>
+	<update id="bbshitupdate" parameterType="String">
+		update bbs_t 
+		set hit = hit + 1 
+		where b_idx = #{b_idx}
+	</update>
+	<select id="bbsdetail" parameterType="String" resultType="bvo">
+		select * from bbs_t where b_idx = #{b_idx}
+	</select>
+	<select id="commentlist" parameterType="String" resultType="cvo">
+		select * from comment_t where b_idx = #{b_idx}
+	</select>
+	<insert id="commentinsert" parameterType="cvo">
+		insert into comment_t(writer, content, write_date, b_idx)
+		values(#{writer}, #{content}, sysdate(), #{b_idx})
+	</insert>
+	<delete id="commentdelete" parameterType="String">
+		delete from comment_t where c_idx = #{c_idx}
+	</delete>
+	<select id="count" resultType="int">
+		select count(*) from bbs_t
+	</select>
+	<select id="list" parameterType="Map" resultType="bvo">
+		select * from bbs_t order by b_idx desc limit #{limit}	offset #{offset}
+	</select>	
+</mapper>
+
+ 

@@ -12,11 +12,15 @@
 	function guestbook2_go() {
 		location.href="gb2_list.do";
 	}
+	function bbs_go() {
+		location.href="bbs_list.do";
+	}
 	
 </script>
 </head>
 <body>
 	<button onclick="guestbook_go()">GuestBook</button>
-	<button onclick="guestbook_go2()">GuestBook2</button>
+	<button onclick="guestbook2_go()">GuestBook2</button>
+	<button onclick="bbs_go()">게시판</button>
 </body>
 </html>

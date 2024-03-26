@@ -21,8 +21,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.ict.guestbook" />
+	<context:component-scan base-package="com.ict" />
 	
 	
-	
+	<!-- 파일 업로드용 클래스 등록 -->
+	<!-- CMR : 커먼즈멀티파트리졸브 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="104857600" />	
+		<beans:property name="defaultEncoding" value="UTF-8" />	
+	</beans:bean>
 </beans:beans>

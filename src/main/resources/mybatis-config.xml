@@ -9,8 +9,13 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.ict.guestbook.dao.GuestBookVO" alias="gvo"/>
+		<!-- <typeAlias type="com.ict.guestbook2.dao.GuestBook2VO" alias="g2vo"/> -->
+		<typeAlias type="com.ict.bbs.dao.BbsVO" alias="bvo"/>
+		<typeAlias type="com.ict.bbs.dao.CommentVO" alias="cvo"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/guestbook-mapper.xml" />
+		<!-- <mapper resource="mappers/guestbook2-mapper.xml" />  -->
+		<mapper resource="mappers/bbs-mapper.xml" />
 	</mappers>
  </configuration>
