@@ -98,6 +98,7 @@
 				<tr>
 					<td colspan="2">
 						<input type="hidden" name="b_idx" value="${bvo.b_idx }">
+						<input type="hidden" name="cPage" value="${cPage}">
 						<input type="button" value="수정" onclick="bbs_update(this.form)"/>
 						<input type="button" value="삭제" onclick="bbs_delete(this.form)"/>
 						<input type="button" value="목록" onclick="bbs_list(this.form)"/>

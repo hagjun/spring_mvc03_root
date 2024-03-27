@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<select id="count" resultType="int">
+		select count(*) from board 
+	</select>	
+	<select id="board_list" parameterType="Map" resultType="bovo">
+		select * from board order by groups desc, lev asc limit #{limit} offset #{offset}
+	</select>
+	<!-- 입력하기전에 특정키값을 가져온 다음 그 값을 이용해서 처리하고 싶다. => selectkey -->
+	<insert id="board_insert" parameterType="bovo">
+		<selectKey keyProperty="groups" resultType="String" order="BEFORE">
+            SELECT (IFNULL(MAX(bo_idx),0)+1) as groups FROM board
+        </selectKey>
+		insert into board(writer, title, content, pwd, hit, groups, step, lev, regdate, f_name)
+		values(#{writer}, #{title}, #{content}, #{pwd}, 0, #{groups}, 0, 0, sysdate(), #{f_name})
+	</insert>
+	<update id="board_hit" parameterType="String">
+		update board set hit = hit + 1 where bo_idx = #{bo_idx}
+	</update>
+	<select id="board_detail" parameterType="String" resultType="bovo">
+		select * from board where bo_idx = #{bo_idx}
+	</select>
+</mapper>
+
+ 

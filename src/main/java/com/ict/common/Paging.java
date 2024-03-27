@@ -8,7 +8,7 @@ public class Paging {
 	private int nowPage = 1;  // 첫 화면 들어갔을 때 첫 페이지
 	private int nowBlock = 1; // 앞으로 가거나 뒤로 가는 버튼사이에 있는 페이지 블럭
 	
-	private int numPerPage = 10; // 한 페이지당 10개 들어간다.
+	private int numPerPage = 5; // 한 페이지당 10개 들어간다.
 	private int pagePerBlock = 3; // 한 블록당 3개가 들어간다.
 	
 	private int totalRecord = 0; // DB의 게시물의 수 

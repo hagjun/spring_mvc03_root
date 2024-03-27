@@ -1,0 +1,20 @@
+package com.ict.board.service;
+
+import java.util.List;
+import java.util.Map;
+
+
+import com.ict.board.dao.BoardVO;
+
+
+public interface BoardService {
+	
+	public int getTotalCount();
+	public List<BoardVO> getBoardList(int offset, int limit);
+	public int getBoardInsert(BoardVO bovo);
+	public int getBoardHit(String bo_idx);
+	public BoardVO getBoardDetail(String bo_idx);
+	public int getLevelUpdate(Map<String, Integer> map);
+	public int getAnsInsert(BoardVO bovo);
+	
+}

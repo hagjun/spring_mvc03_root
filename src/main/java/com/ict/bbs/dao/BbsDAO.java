@@ -97,30 +97,17 @@ public class BbsDAO {
 		}
 		return null;
 	}
+	
+	public int getBbsDelete(String b_idx) {
+		try {
+			/* return sqlSessionTemplate.delete("bbs.bbsdelete", b_idx); */
+			return sqlSessionTemplate.update("bbs.bbsdelete", b_idx);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return -1;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

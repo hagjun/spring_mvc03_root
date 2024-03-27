@@ -32,9 +32,24 @@
 	<select id="count" resultType="int">
 		select count(*) from bbs_t
 	</select>
+	<!-- 
+		결과 행 제한하기 - LIMIT = 출력값을 제한함 (MYSQL(MariaDB)과 PostgreSQL) 
+		SELECT 명령 FROM 테이블명 LIMIT 함수 [OFFST 시작행]; 
+		LIMIT 구는 SELECT 명령의 마지막에 지정하는 것으로 WHERE구나 ORDER BY구의 뒤에 지정한다.
+	-->
 	<select id="list" parameterType="Map" resultType="bvo">
 		select * from bbs_t order by b_idx desc limit #{limit}	offset #{offset}
 	</select>	
+	<!-- 
+		<delete id="bbsdelete" parameterType="String">
+			delete from bbs_t where b_idx = #{b_idx}
+		</delete>
+	 -->
+	 <update id="bbsdelete" parameterType="String">
+	 	update bbs_t set
+	 	active = 1
+	 	where b_idx = #{b_idx}
+	 </update>
 </mapper>
 
  
