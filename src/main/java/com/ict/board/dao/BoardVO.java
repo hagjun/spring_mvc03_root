@@ -3,9 +3,26 @@ package com.ict.board.dao;
 import org.springframework.web.multipart.MultipartFile;
 
 public class BoardVO {
-	private String bo_idx, writer, title, content, pwd, hit, groups, step, lev, regdate, f_name;
+	private String bo_idx, writer, title, content, pwd, hit, groups, step, lev, regdate, f_name, active, old_f_name;
 	private MultipartFile file;
 	
+	
+	public String getOld_f_name() {
+		return old_f_name;
+	}
+
+	public void setOld_f_name(String old_f_name) {
+		this.old_f_name = old_f_name;
+	}
+
+	public String getActive() {
+		return active;
+	}
+
+	public void setActive(String active) {
+		this.active = active;
+	}
+
 	public String getBo_idx() {
 		return bo_idx;
 	}

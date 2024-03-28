@@ -24,6 +24,34 @@
 	<select id="board_detail" parameterType="String" resultType="bovo">
 		select * from board where bo_idx = #{bo_idx}
 	</select>
+	
+	<!-- lev update 
+		groups 이 같으면서 레벨이 크거나 같으면 기존 레벨을 증가하자.	
+	-->
+	<update id="lev_update" parameterType="Map">
+		update board set lev = lev + 1 where groups = #{groups} and lev >= #{lev}
+	</update>
+	
+	<insert id="ans_insert" parameterType="bovo">
+		insert into board(writer, title, content, pwd, hit, groups, step, lev, regdate, f_name)
+		values(#{writer}, #{title}, #{content}, #{pwd}, 0, #{groups}, #{step}, #{lev}, sysdate(), #{f_name})
+	</insert>
+	
+	<update id="board_delete" parameterType="bovo">
+		<!-- 원글/댓글 active = 1 -->
+		update board set active = 1 where bo_idx = #{bo_idx}
+	</update>
+	
+	<!-- 댓글이랑 원글삭제가 달라짐 -->
+	<delete id="board_ans_delete" parameterType="bovo">
+		delete from board where bo_idx = #{bo_idx}
+	</delete>
+	
+	<update id="board_update" parameterType="bovo">
+		update board 
+		set writer = #{writer}, title = #{title}, content = #{content}, f_name = #{f_name}
+		where bo_idx = #{bo_idx}
+	</update>
 </mapper>
 
  

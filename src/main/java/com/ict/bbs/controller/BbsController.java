@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ict.bbs.dao.BbsVO;
 import com.ict.bbs.dao.CommentVO;
 import com.ict.bbs.service.BbsService;
+import com.ict.board.dao.BoardVO;
 import com.ict.common.Paging;
 
 @Controller
@@ -200,6 +201,7 @@ public class BbsController {
 		}
 		return new ModelAndView("bbs/error");
 	}
+	
 }
 	
 	

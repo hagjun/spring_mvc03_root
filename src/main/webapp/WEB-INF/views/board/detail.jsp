@@ -64,18 +64,18 @@ th {
 	</tr>
 	<tr>
 		<th bgcolor="#B2EBF4">첨부파일</th>
-		 <td>
+		 
 		 	<c:choose>
 		 		<c:when test="${empty bovo.f_name }">
 		 			<td><b>첨부파일없음</b></td>
 		 		</c:when>
 		 		<c:otherwise>
 		 			<td>
-		 				<a href="down.do?f_name=${bovo.f_name }"><img src="/resources/upload/${bovo.f_name }" style="width: 80px;"></a>
+		 				<a href="down.do?f_name=${bovo.f_name }"><img src="resources/upload/${bovo.f_name }" style="width: 80px;"></a>
 		 			</td>
 		 		</c:otherwise>
 		 	</c:choose>
-		 </td>
+		 
 	</tr>
 	</tbody>
 	<tfoot>

@@ -102,8 +102,16 @@ table tfoot ol.paging li a:hover {
 						<c:forEach var="k" items="${board_list}" varStatus="vs">
 							<tr>
 								<td>${paging.totalRecord - ((paging.nowPage-1) * paging.numPerPage + vs.index) }</td>
-								<td>
-									<a href="board_detail.do?bo_idx=${k.bo_idx }&cPage=${paging.nowPage}">${k.title }</a>
+								<td style="text-align: left;">
+								<c:forEach begin="1" end="${k.step }">&nbsp;[Re]</c:forEach>
+								<c:choose>
+									<c:when test="${k.active == 1 }">
+										<span style="color:lightgray;">삭제된 게시물입니다.</span>											
+									</c:when>
+									<c:otherwise>
+										<a href="board_detail.do?bo_idx=${k.bo_idx }&cPage=${paging.nowPage}">${k.title }</a>
+									</c:otherwise>
+								</c:choose>
 								</td>
 								<td>${k.writer }</td>
 								<td>${k.regdate.substring(0,10) }</td>
