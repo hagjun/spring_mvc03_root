@@ -18,6 +18,9 @@
 	function board_go() {
 		location.href="board_list.do";
 	}
+	function shop_go() {
+		location.href="shop_list.do";
+	}
 	
 </script>
 </head>
@@ -26,5 +29,6 @@
 	<button onclick="guestbook2_go()">GuestBook2</button>
 	<button onclick="bbs_go()">게시판</button>
 	<button onclick="board_go()">게시판2</button>
+	<button onclick="shop_go()">shop</button>
 </body>
 </html>
