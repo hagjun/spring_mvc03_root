@@ -4,7 +4,7 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <!-- 기본 mapper -->
 <mapper namespace="member">
-	<select id="detail" parameterType="mvo" resultType="mvo">
+	<select id="login" parameterType="mvo" resultType="mvo">
 		select * from members where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
 </mapper>

@@ -29,6 +29,12 @@
 	<delete id="cart_delete" parameterType="String">
 		delete from cart where cart_idx = #{cart_idx}
 	</delete>
+	<insert id="product_insert" parameterType="svo">
+		insert into shop_t (category, p_num, p_name,p_company, p_price, 
+		p_saleprice, p_image_s, p_image_l, p_content, p_date)
+        values(#{category} , #{p_num}, #{p_name}, #{p_company}, #{p_price}, 
+        #{p_saleprice}, #{p_image_s}, #{p_image_l}, #{p_content}, sysdate());
+	</insert>
 </mapper>
 
  

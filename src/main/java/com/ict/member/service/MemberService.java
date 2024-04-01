@@ -5,6 +5,7 @@ import com.ict.member.dao.MemberVO;
 
 
 public interface MemberService {
-	public MemberVO getLoginOK(MemberVO mvo) throws Exception;
+	// 로그인
+	public MemberVO getLogin(MemberVO mvo);
 
 }

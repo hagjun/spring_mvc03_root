@@ -61,4 +61,16 @@ public class ShopDAO {
 	public int getCartDelete(String cart_idx) throws Exception {
 		return sqlSessionTemplate.delete("shop.cart_delete", cart_idx);
 	}
+	
+	public int getProductInsert(ShopVO svo) throws Exception {
+		return sqlSessionTemplate.insert("shop.product_insert", svo);
+	}
 }
+
+
+
+
+
+
+
+

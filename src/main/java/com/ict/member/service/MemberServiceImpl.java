@@ -11,9 +11,11 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberDAO memberdao;
 	
+
 	@Override
-	public MemberVO getLoginOK(MemberVO mvo) throws Exception {
-		return memberdao.getLoginOK(mvo);
+	public MemberVO getLogin(MemberVO mvo) {
+		
+		return memberdao.getLogin(mvo);
 	}
 
 }
