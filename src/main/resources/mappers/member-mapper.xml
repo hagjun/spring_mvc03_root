@@ -7,6 +7,16 @@
 	<select id="login" parameterType="mvo" resultType="mvo">
 		select * from members where m_id = #{m_id} and m_pw = #{m_pw}
 	</select>
+	<select id="ajax_list" resultType="mvo">
+		select * from members order by m_idx 
+	</select>
+	<select id="idchk" parameterType="String" resultType="int">
+		select count(*) from members where m_id = #{m_id}
+	</select>
+	<insert id="join" parameterType="String">
+		insert into members(m_id, m_pw, m_name, m_age, m_reg)
+		values(#{m_id}, #{m_pw}, #{m_name}, #{m_age}, #{m_reg})
+	</insert>
 </mapper>
 
  

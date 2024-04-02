@@ -24,6 +24,12 @@
 	function spring_ajax_go() {
 		location.href="spring_ajax_go.do";
 	}
+	function spring_ajax_go2() {
+		location.href="spring_ajax_go2.do";
+	}
+	function spring_sns_go() {
+		location.href="spring_sns_go.do";
+	}
 	
 </script>
 </head>
@@ -34,5 +40,7 @@
 	<button onclick="board_go()">게시판2</button>
 	<button onclick="shop_go()">shop</button>
 	<button onclick="spring_ajax_go()">Spring Ajax</button>
+	<button onclick="spring_ajax_go2()">Spring Ajax2</button>
+	<button onclick="spring_sns_go()">Spring sns</button>
 </body>
 </html>

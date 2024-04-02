@@ -10,4 +10,9 @@ public class AjaxController {
 	public ModelAndView getStringAjax() {
 		return new ModelAndView("ajax/ajax_exam");
 	}
+
+	@GetMapping("spring_ajax_go2.do")
+	public ModelAndView getStringAjax2() {
+		return new ModelAndView("ajax/ajax_exam2");
+	}
 }
