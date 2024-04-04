@@ -30,6 +30,9 @@
 	function spring_sns_go() {
 		location.href="spring_sns_go.do";
 	}
+	function dynamic_query() {
+		location.href="dynamic_query.do";
+	}
 	
 </script>
 </head>
@@ -42,5 +45,6 @@
 	<button onclick="spring_ajax_go()">Spring Ajax</button>
 	<button onclick="spring_ajax_go2()">Spring Ajax2</button>
 	<button onclick="spring_sns_go()">Spring sns</button>
+	<button onclick="dynamic_query()">동적Query</button>
 </body>
 </html>
